@@ -1,0 +1,409 @@
+﻿@page
+@using LPGxWebApp.GlobalData;
+@using LPGxWebApp.Response;
+@model LPGxWebApp.Pages.BranchesModel;
+@{
+    ViewData["Title"] = "Branches";
+    ViewData["ActiveMenu"] = "Branches";  // Set active menu here
+    ViewData["OpenMenu"] = "Setup";  // Set open menu (for example, if the Setup menu should be expanded)
+}
+@{
+    // Retrieve the message and message type directly, if necessary
+    var message = TempData["Message"] as string;
+    var messageType = TempData["MessageType"] as string;
+
+    // Retrieve the current time
+    var currentTime = DateTime.Now.ToString("yyyy-MM-ddTHH:mm");
+
+    // Retrieve VerifyLoginData from session and check for null
+    var verifyLoginData = HttpContext.Session.GetObject<VerifyLoginData>("VerifyLoginData");
+
+    // Redirect to Login if VerifyLoginData is null
+    if (verifyLoginData == null)
+    {
+        RedirectToPage("/Login/Index");
+        return; // Ensure no further code is executed after redirect
+    }
+
+    // Use the signon name from the verified login data
+    var usercode = verifyLoginData.UserCode;
+    var projectcode = verifyLoginData.ProjectCode;
+    var username = verifyLoginData.UserName;
+    var userlevel = verifyLoginData.UserLevel;
+    var branchcode = verifyLoginData.BranchCode;
+}
+
+<!doctype html>
+
+<html lang="en"
+      class="light-style layout-menu-fixed layout-compact"
+      dir="ltr"
+      data-theme="theme-default"
+      data-assets-path="~/assets/"
+      data-template="vertical-menu-template-free"
+      data-style="light">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>@ViewData["Title"]</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="~/images/logo.png" type="image/png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&ampdisplay=swap"
+          rel="stylesheet" />
+
+    <link rel="stylesheet" href="~/assets/vendor/fonts/remixicon/remixicon.css" />
+
+    <!-- Menu waves for no-customizer fix -->
+    <link rel="stylesheet" href="~/assets/vendor/libs/node-waves/node-waves.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="~/assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="~/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="~/assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="~/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+    <!-- Page CSS -->
+    <!-- Helpers -->
+    <script src="~/assets/vendor/js/helpers.js"></script>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="~/assets/js/config.js"></script>
+
+    <!-- Toastr CSS in <head> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+            <!-- Set Temp data -->
+            @{
+                TempData["username"] = username;
+                TempData["userlevel"] = userlevel;
+                TempData["branchcode"] = branchcode;
+
+                if (userlevel == 1)
+                    TempData["levelname"] = "Super Admin";
+                else if (userlevel == 2)
+                    TempData["levelname"] = "Admin";
+                else if (userlevel == 3)
+                    TempData["levelname"] = "Salesman";
+                else if (userlevel == 4)
+                    TempData["levelname"] = "Management";
+            }
+            <!-- Menu -->
+            @{
+                await Html.RenderPartialAsync("Shared/_MenuPartial");
+            }
+            <!-- / Menu -->
+            <!-- Layout container -->
+            <div class="layout-page">
+                <!-- Navbar -->
+                @{
+                    await Html.RenderPartialAsync("Shared/_NavBarPartial");
+                }
+                <!-- / Navbar -->
+                <!-- Content wrapper -->
+                <div class="content-wrapper">
+                    <!-- Content -->
+
+                    <div class="container-xxl flex-grow-1 container-p-y py-5">
+                        <div class="row gy-6">
+                            <div class="card shadow-sm p-4">
+                                <h5>@ViewData["Title"] Registration Form</h5>
+                                <div>
+                                    <form id="buildingRegistrationForm" action="~/Setup/Branches" method="POST">
+                                        <div class="row g-3">
+                                            <!-- Building Code (hidden) -->
+                                            <div class="col-md-4" style="display: none;">
+                                                <div class="mb-3">
+                                                    <label for="bldcode" class="form-label">Building Code</label>
+                                                    <input type="number" class="form-control" id="bldcode" name="bldcode" readonly value="0" />
+                                                </div>
+                                            </div>
+
+                                            <!-- Country Code (hidden) -->
+                                            <div class="col-md-4" style="display: none;">
+                                                <div class="mb-3">
+                                                    <label for="countrycode" class="form-label">Country Code</label>
+                                                    <input type="text" class="form-control" id="countrycode" name="countrycode" readonly required />
+                                                    <div class="invalid-feedback">Country code is required.</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Building Name (bldname) -->
+                                            <div class="col-md-4">
+                                                <div class="mb-3">
+                                                    <label for="bldname" class="form-label">Building Name</label>
+                                                    <input type="text" class="form-control" id="bldname" name="bldname" required />
+                                                    <div class="invalid-feedback">Building name is required.</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Building Address (bldaddress) -->
+                                            <div class="col-md-4">
+                                                <div class="mb-3">
+                                                    <label for="bldaddress" class="form-label">Address</label>
+                                                    <input type="text" class="form-control" id="bldaddress" name="bldaddress" required />
+                                                    <div class="invalid-feedback">Building address is required.</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Building City (bldcity) -->
+                                            <div class="col-md-4">
+                                                <div class="mb-3">
+                                                    <label for="bldcity" class="form-label">City</label>
+                                                    <input type="text" class="form-control" id="bldcity" name="bldcity" required />
+                                                    <div class="invalid-feedback">Building city is required.</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Project (projectcode) -->
+                                            <div class="col-md-4">
+                                                <div class="mb-3">
+                                                    <label for="projectcode" class="form-label">Project</label>
+                                                    <select class="form-control" id="projectcode" name="projectcode" required>
+                                                        <option value="" disabled selected>Select Project</option>
+                                                        @if (Model.ProjectList != null && Model.ProjectList.Any())
+                                                        {
+                                                            @foreach (var apt in Model.ProjectList)
+                                                            {
+                                                                <!-- Use PROJECTCODE as the value and show PROJECTNAME in the dropdown -->
+                                                                <option value="@apt.PROJECTCODE" data-countrycode="@apt.COUNTRYCODE">@apt.PROJECTNAME</option>
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            <option value="" disabled>No project available</option>
+                                                        }
+                                                    </select>
+                                                    <div class="invalid-feedback">Please select an option.</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- entryuser (hidden) -->
+                                            <div class="col-md-4" style="display: none;">
+                                                <div class="mb-3">
+                                                    <label for="entryuser" class="form-label">Entry User ID</label>
+                                                    <input type="number" class="form-control" id="entryuser" name="entryuser" value="@usercode" required />
+                                                    <div class="invalid-feedback">Entry user ID is required.</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- createdate (hidden) -->
+                                            <div class="col-md-4" style="display: none;">
+                                                <div class="mb-3">
+                                                    <label for="createdate" class="form-label">Create Date</label>
+                                                    <input type="datetime-local" class="form-control" id="createdate" name="createdate" value="@currentTime" required />
+                                                    <div class="invalid-feedback">Creation date is required.</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- enableyn (default to "Y") (hidden) -->
+                                            <div class="col-md-4" style="display: none;">
+                                                <div class="mb-3">
+                                                    <label for="enableyn" class="form-label">Enabled</label>
+                                                    <select class="form-control" id="enableyn" name="enableyn" required>
+                                                        <option value="Y" selected>Yes</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <!-- Submit Button -->
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="ri-check-double-line"></i> Submit
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        <div class="row gy-6">
+                            <!-- Basic Bootstrap Table -->
+                            <div class="card">
+                                <h5 class="card-header">@ViewData["Title"]</h5>
+                                <div class="table-responsive text-nowrap">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Code</th>
+                                                <th>Project</th>
+                                                <th>Name</th>
+                                                <th>Address</th>
+                                                <th>City</th>
+                                                <th>Country</th>
+                                                <th>Status</th>
+                                                <th class="text-end">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table-border-bottom-0">
+                                            @if (Model.Branches != null && Model.Branches.Any())
+                                            {
+                                                @foreach (var project in Model.Branches)
+                                                {
+                                                    <tr>
+                                                        <!-- Building Code -->
+                                                        <td>@project.BRANCHCODE</td>
+
+                                                        <!-- Project Code -->
+                                                        <td>@project.PROJECTCODE</td>
+
+                                                        <!-- Project Name -->
+                                                        <td>@project.BLDNAME</td>
+
+                                                        <!-- Address -->
+                                                        <td>@project.BLDADDRESS</td>
+
+                                                        <!-- City -->
+                                                        <td>@project.BLDCITY</td>
+
+                                                        <!-- Country with icon -->
+                                                        <td>
+                                                            <i class="ri-map-pin-line ri-22px text-info me-2"></i>
+                                                            <span>@project.COUNTRYCODE</span>
+                                                        </td>
+
+                                                        <!-- Status -->
+                                                        <td>
+                                                            <span class="badge rounded-pill
+                                                                @(project.ENABLEYN == "Y" ? "bg-label-success" : "bg-label-warning")">
+                                                                @(project.ENABLEYN == "Y" ? "Active" : "Inactive")
+                                                            </span>
+                                                        </td>
+
+                                                        <!-- Actions -->
+                                                        <td class="text-end">
+                                                            <!-- Align buttons to the right -->
+                                                            <!-- Edit Button -->
+                                                            <button type="button" class="btn btn-sm btn-primary me-2" onclick="editProject('@project.BRANCHCODE')">
+                                                                <i class="ri-pencil-line me-1"></i> Edit
+                                                            </button>
+
+                                                            <!-- Delete Button -->
+                                                            <button type="button" class="btn btn-sm btn-danger" onclick="deleteProject('@project.BRANCHCODE')">
+                                                                <i class="ri-delete-bin-6-line me-1"></i> Delete
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <tr>
+                                                    <td colspan="8" class="text-center">No projects found.</td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!--/ Basic Bootstrap Table -->
+                        </div>
+                    </div>
+
+                    <!-- JavaScript to handle projectcode change -->
+                    <script>
+                        document.getElementById("projectcode").addEventListener("change", function () {
+                            var selectedOption = this.options[this.selectedIndex];
+                            var countryCode = selectedOption.getAttribute("data-countrycode");
+
+                            // Set the country code value in the input field
+                            document.getElementById("countrycode").value = countryCode;
+                        });
+                    </script>
+
+
+                    <!-- Footer -->
+                    @{
+                        await Html.RenderPartialAsync("Shared/_FooterPartial");
+                    }
+                    <!-- / Footer -->
+
+                    <div class="content-backdrop fade"></div>
+                </div>
+                <!-- Content wrapper -->
+            </div>
+            <!-- / Layout page -->
+        </div>
+
+        <!-- Overlay -->
+        <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    <!-- / Layout wrapper -->
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="~/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="~/assets/vendor/libs/popper/popper.js"></script>
+    <script src="~/assets/vendor/js/bootstrap.js"></script>
+    <script src="~/assets/vendor/libs/node-waves/node-waves.js"></script>
+    <script src="~/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="~/assets/vendor/js/menu.js"></script>
+
+    <!-- endbuild -->
+    <!-- Vendors JS -->
+    <!-- Main JS -->
+    <script src="~/assets/js/main.js"></script>
+
+    <!-- Bootstrap 5 and Popper.js JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <!-- Include Toastr JS at the end of your page, just before the closing </body> tag -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    <!-- Now you can configure Toastr and use it -->
+    @if (!string.IsNullOrEmpty(message))
+    {
+        <script type="text/javascript">
+            if (typeof toastr !== 'undefined') {
+            @if (messageType == "Success")
+            {
+                <text>toastr.success('@message'); </text>
+            }
+            else if (messageType == "Error")
+            {
+                <text>toastr.error('@message'); </text>
+            }
+            else if (messageType == "Info")
+            {
+                <text>toastr.info('@message'); </text>
+            }
+            else if (messageType == "Warning")
+            {
+                <text>toastr.warning('@message'); </text>
+            }
+            else
+            {
+                <text>toastr.info('@message'); </text>  <!-- Default to Info -->
+            }
+                                                                    }
+            else {
+                console.error('Toastr library is not loaded!');
+            }
+        </script>
+    }
+
+    <!-- Page JS -->
+    <!-- Place this tag before closing body tag for github widget button. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+</html>
+
+

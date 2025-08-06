@@ -1,0 +1,576 @@
+﻿@page
+@using LPGxWebApp.GlobalData;
+@using LPGxWebApp.Response;
+@model LPGxWebApp.Pages.SaleModel
+@{
+    ViewData["Title"] = "Sale";
+    ViewData["ActiveMenu"] = "Sale";  // Set active menu here
+    ViewData["OpenMenu"] = "Operation";  // Set open menu (for example, if the Setup menu should be expanded)
+}
+@{
+    // Retrieve the message and message type directly, if necessary
+    var message = TempData["Message"] as string;
+    var messageType = TempData["MessageType"] as string;
+
+    // Retrieve the current time
+    var currentTime = DateTime.Now.ToString("yyyy-MM-ddTHH:mm");
+
+    // Retrieve VerifyLoginData from session and check for null
+    var verifyLoginData = HttpContext.Session.GetObject<VerifyLoginData>("VerifyLoginData");
+    var branchname = HttpContext.Session.GetObject<string>("branchname");
+
+    // Redirect to Login if VerifyLoginData is null
+    if (verifyLoginData == null)
+    {
+        RedirectToPage("/Login/Index");
+        return; // Ensure no further code is executed after redirect
+    }
+
+    // Use the signon name from the verified login data
+    var signonname = verifyLoginData.SignonName;
+    var username = verifyLoginData.UserName;
+    var userlevel = verifyLoginData.UserLevel;
+    var branchcode = verifyLoginData.BranchCode;
+}
+
+<!doctype html>
+
+<html lang="en"
+      class="light-style layout-menu-fixed layout-compact"
+      dir="ltr"
+      data-theme="theme-default"
+      data-assets-path="~/assets/"
+      data-template="vertical-menu-template-free"
+      data-style="light">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>@ViewData["Title"]</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="~/images/logo.png" type="image/png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&ampdisplay=swap"
+          rel="stylesheet" />
+
+    <link rel="stylesheet" href="~/assets/vendor/fonts/remixicon/remixicon.css" />
+
+    <!-- Menu waves for no-customizer fix -->
+    <link rel="stylesheet" href="~/assets/vendor/libs/node-waves/node-waves.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="~/assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="~/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="~/assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="~/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+    <!-- Page CSS -->
+    <!-- Helpers -->
+    <script src="~/assets/vendor/js/helpers.js"></script>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="~/assets/js/config.js"></script>
+
+    <!-- Toastr CSS in <head> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+            <!-- Set Temp data -->
+            @{
+                TempData["username"] = username;
+                TempData["userlevel"] = userlevel;
+                TempData["branchcode"] = branchcode;
+
+                if (userlevel == 1)
+                    TempData["levelname"] = "Super Admin";
+                else if (userlevel == 2)
+                    TempData["levelname"] = "Admin";
+                else if (userlevel == 3)
+                    TempData["levelname"] = "Salesman";
+                else if (userlevel == 4)
+                    TempData["levelname"] = "Management";
+            }
+            <!-- Menu -->
+            @{
+                await Html.RenderPartialAsync("Shared/_MenuPartial");
+            }
+            <!-- / Menu -->
+            <!-- Layout container -->
+            <div class="layout-page">
+                <!-- Navbar -->
+                @{
+                    await Html.RenderPartialAsync("Shared/_NavBarPartial");
+                }
+                <!-- / Navbar -->
+                <!-- Content wrapper -->
+                <div class="content-wrapper">
+                    <!-- Content -->
+
+                    <div class="container-xxl flex-grow-1 container-p-y py-5">
+                        <div class="row gy-6">
+                            <div class="card shadow-sm p-4">
+                                <h5>@ViewData["Title"] Enrty</h5>
+                                <form id="parkingForm" action="~/Operation/Sale" method="POST">
+                                    <div class="row g-3">
+
+                                        <!-- SaleId (hidden)-->
+                                        <div class="col-md-3" style="display: none;">
+                                            <div class="mb-3">
+                                                <label for="SaleId" class="form-label">Sale Id</label>
+                                                <input type="number" class="form-control" id="SaleId" name="SaleId" readonly value="0" />
+                                            </div>
+                                        </div>
+
+                                        <!-- Sale Date -->
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label for="SaleDate" class="form-label">Date</label>
+                                                <input type="date" class="form-control" id="SaleDate" name="SaleDate" value="@currentTime" required />
+                                                <div class="invalid-feedback">Entry Date is required.</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Person Id (combo) -->
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label for="PersonId" class="form-label">Salesman</label>
+                                                <select class="form-control" id="PersonId" name="PersonId" required>
+                                                    <option value="" disabled selected>Select Salesman</option>
+                                                    @if (Model.Salesman != null && Model.Salesman.Any())
+                                                    {
+                                                        @foreach (var prod in Model.Salesman)
+                                                        {
+                                                            <option value="@prod.PersonId">@prod.PersonName</option>
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="" disabled>No data available</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <!-- Product Code (combo) -->
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label for="ProductId" class="form-label">Distributor</label>
+                                                <select class="form-control" id="ProductId" name="ProductId" required>
+                                                    <option value="" disabled selected>Select Distributor</option>
+                                                    @if (Model.Distributors != null && Model.Distributors.Any())
+                                                    {
+                                                        @foreach (var prod in Model.Distributors)
+                                                        {
+                                                            <option value="@prod.ProductId">@prod.ProductName</option>
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="" disabled>No data available</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <!-- unit -->
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label for="unit" class="form-label">Unit</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text" id="basic-addon5">
+                                                        <i class="ri-crop-line" style="color: var(--bs-primary);"></i>
+                                                    </span>
+                                                    <input type="number"
+                                                           class="form-control"
+                                                           placeholder="Unit"
+                                                           aria-label="Unit"
+                                                           id="unit"
+                                                           name="unit"
+                                                           min="1"
+                                                           aria-describedby="basic-addon5" />
+                                                </div>
+                                                <div class="invalid-feedback">Unit is required.</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Package (hidden) -->
+                                        <div class="col-md-3" style="display: none;">
+                                            <div class="mb-3">
+                                                <label for="packages" class="form-label">Package</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text" id="basic-addon6">
+                                                        <i class="ri-input-cursor-move" style="color: var(--bs-primary);"></i>
+                                                    </span>
+                                                    <input type="number"
+                                                           class="form-control"
+                                                           placeholder="Package"
+                                                           aria-label="Package"
+                                                           id="packages"
+                                                           name="packages"
+                                                           min="0"
+                                                           aria-describedby="basic-addon6" />
+                                                </div>
+                                                <div class="invalid-feedback">Package is required.</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Cylinder Due (hidden) -->
+                                        <div class="col-md-3" style="display: none;">
+                                            <div class="mb-3">
+                                                <label for="cylinderdue" class="form-label">Cylinder Due</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text" id="basic-addon7">
+                                                        <i class="ri-haze-2-line" style="color: var(--bs-primary);"></i>
+                                                    </span>
+                                                    <input type="number"
+                                                           class="form-control"
+                                                           placeholder="Cylinder Due"
+                                                           aria-label="Cylinder Due"
+                                                           id="cylinderdue"
+                                                           name="cylinderdue"
+                                                           min="0"
+                                                           aria-describedby="basic-addon7" />
+                                                </div>
+                                                <div class="invalid-feedback">Cylinder Due is required.</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Cylinder Paid (hidden) -->
+                                        <div class="col-md-3" style="display: none;">
+                                            <div class="mb-3">
+                                                <label for="cylinderpaid" class="form-label">Cylinder Paid</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text" id="basic-addon8">
+                                                        <i class="ri-refund-2-fill" style="color: var(--bs-primary);"></i>
+                                                    </span>
+                                                    <input type="number"
+                                                           class="form-control"
+                                                           placeholder="Cylinder Paid"
+                                                           aria-label="Cylinder Paid"
+                                                           id="cylinderpaid"
+                                                           name="cylinderpaid"
+                                                           min="0"
+                                                           step="1"
+                                                           aria-describedby="basic-addon8" />
+                                                </div>
+                                                <div class="invalid-feedback">Cylinder Paid is required.</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- On Date (hidden) -->
+                                        <div class="col-md-3" style="display: none;">
+                                            <div class="mb-3">
+                                                <label for="onDate" class="form-label">On Date</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text" id="basic-addon8">
+                                                        <i class="ri-calendar-fill" style="color: var(--bs-primary);"></i>
+                                                    </span>
+                                                    <input type="number"
+                                                           class="form-control"
+                                                           placeholder="onDate"
+                                                           aria-label="onDate"
+                                                           id="onDate"
+                                                           name="onDate"
+                                                           min="0"
+                                                           step="1"
+                                                           aria-describedby="basic-addon8" />
+                                                </div>
+                                                <div class="invalid-feedback">On Date is required.</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Cylinder Exchange (hidden) -->
+                                        <div class="col-md-3" style="display: none;">
+                                            <div class="mb-3">
+                                                <label for="cylinderexchange" class="form-label">Cylinder Exchange</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text" id="basic-addon9">
+                                                        <i class="ri-exchange-line" style="color: var(--bs-primary);"></i>
+                                                    </span>
+                                                    <input type="number"
+                                                           class="form-control"
+                                                           placeholder="Cylinder Exchange"
+                                                           aria-label="Cylinder Exchange"
+                                                           id="cylinderexchange"
+                                                           name="cylinderexchange"
+                                                           min="0"
+                                                           step="1"
+                                                           aria-describedby="basic-addon9" />
+                                                </div>
+                                                <div class="invalid-feedback">Cylinder Exchange is required.</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Loan Paid (hidden) -->
+                                        <div class="col-md-3" style="display: none;">
+                                            <div class="mb-3">
+                                                <label for="loanpaid" class="form-label">Loan Paid</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text" id="basic-addon10">
+                                                        <i class="ri-bank-line" style="color: var(--bs-primary);"></i>
+                                                    </span>
+                                                    <input type="number"
+                                                           class="form-control"
+                                                           placeholder="Loan Paid"
+                                                           aria-label="Loan Paid"
+                                                           id="loanpaid"
+                                                           name="loanpaid"
+                                                           min="0"
+                                                           step="1"
+                                                           aria-describedby="basic-addon10" />
+                                                </div>
+                                                <div class="invalid-feedback">Loan Paid is required.</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Cylinder Sale Purchase (hidden) -->
+                                        <div class="col-md-3" style="display: none;">
+                                            <div class="mb-3">
+                                                <label for="cylindersalepurchase" class="form-label">Cylinder Sale Purchase</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text" id="basic-addon11">
+                                                        <i class="ri-store-line" style="color: var(--bs-primary);"></i>
+                                                    </span>
+                                                    <input type="number"
+                                                           class="form-control"
+                                                           placeholder="Cylinder Sale Purchase"
+                                                           aria-label="Cylinder Sale Purchase"
+                                                           id="cylindersalepurchase"
+                                                           name="cylindersalepurchase"
+                                                           min="0"
+                                                           step="1"
+                                                           aria-describedby="basic-addon11" />
+                                                </div>
+                                                <div class="invalid-feedback">Cylinder Sale Purchase is required.</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Previous Stock (hidden) -->
+                                        <div class="col-md-3" style="display: none;">
+                                            <div class="mb-3">
+                                                <label for="previousstock" class="form-label">Previous Stock</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text" id="basic-addon13">
+                                                        <i class="ri-stock-line" style="color: var(--bs-primary);"></i>
+                                                    </span>
+                                                    <input type="number"
+                                                           class="form-control"
+                                                           placeholder="Previous Stock"
+                                                           aria-label="Previous Stock"
+                                                           id="previousstock"
+                                                           name="previousstock"
+                                                           min="0"
+                                                           step="1"
+                                                           aria-describedby="basic-addon13" />
+                                                </div>
+                                                <div class="invalid-feedback">Previous Stock is required.</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Refile Purchase (hidden) -->
+                                        <div class="col-md-3" style="display: none;">
+                                            <div class="mb-3">
+                                                <label for="refilepurchase" class="form-label">Refile Purchase</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text" id="basic-addon14">
+                                                        <i class="ri-refresh-line" style="color: var(--bs-primary);"></i>
+                                                    </span>
+                                                    <input type="number"
+                                                           class="form-control"
+                                                           placeholder="Refile Purchase"
+                                                           aria-label="Refile Purchase"
+                                                           id="refilepurchase"
+                                                           name="refilepurchase"
+                                                           min="0"
+                                                           step="1"
+                                                           aria-describedby="basic-addon14" />
+                                                </div>
+                                                <div class="invalid-feedback">Refile Purchase is required.</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Package Purchase (hidden) -->
+                                        <div class="col-md-3" style="display: none;">
+                                            <div class="mb-3">
+                                                <label for="packagepurchase" class="form-label">Package Purchase</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text" id="basic-addon15">
+                                                        <i class="ri-meteor-line" style="color: var(--bs-primary);"></i>
+                                                    </span>
+                                                    <input type="number"
+                                                           class="form-control"
+                                                           placeholder="Package Purchase"
+                                                           aria-label="Package Purchase"
+                                                           id="packagepurchase"
+                                                           name="packagepurchase"
+                                                           min="0"
+                                                           step="1"
+                                                           aria-describedby="basic-addon15" />
+                                                </div>
+                                                <div class="invalid-feedback">Package Purchase is required.</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- BranchCode (hidden) -->
+                                        <div class="col-md-4" style="display: none;">
+                                            <div class="mb-3">
+                                                <label for="BranchCode" class="form-label">Branch Code</label>
+                                                <input type="text" class="form-control" id="BranchCode" name="BranchCode" value="@branchcode" />
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Submit Button -->
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="ri-check-double-line"></i> 
+                                        <span>Submit</span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        <div class="row gy-6">
+                            <!-- Basic Bootstrap Table -->
+                            <div class="card">
+                                <h5 class="card-header">@ViewData["Title"]</h5>
+                                <div class="table-responsive text-nowrap">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>NAV</th>
+                                                <th>DUB</th>
+                                                <th>UNI</th>
+                                                <th>TOTAL</th>
+                                                <th>PKG</th>
+                                                <th>C-D</th>
+                                                <th>C-P</th>
+                                                <th>DT</th>
+                                                <th>TOTAL</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table-border-bottom-0">
+                                            @if (Model.Sales != null && Model.Sales.Any())
+                                            {
+                                                @foreach (var project in Model.Sales)
+                                                {
+                                                    <tr>
+                                                        <td>@project.Name</td>
+                                                        <td>@project.NAV</td>
+                                                        <td>@project.DUB</td>
+                                                        <td>@project.UNI</td>
+                                                        <td>@project.TOT</td>
+                                                        <td>@project.PKG</td>
+                                                        <td>@project.CD</td>
+                                                        <td>@project.CP</td>
+                                                        <td>@project.DT</td>
+                                                        <td>@project.TOTAL</td>
+                                                    </tr>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <tr>
+                                                    <td colspan="10" class="text-center">No record found.</td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!--/ Basic Bootstrap Table -->
+                        </div>
+                    </div>
+
+                    <!-- Footer -->
+                    @{
+                        await Html.RenderPartialAsync("Shared/_FooterPartial");
+                    }
+                    <!-- / Footer -->
+
+                    <div class="content-backdrop fade"></div>
+                </div>
+                <!-- Content wrapper -->
+            </div>
+            <!-- / Layout page -->
+        </div>
+
+        <!-- Overlay -->
+        <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    <!-- / Layout wrapper -->
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="~/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="~/assets/vendor/libs/popper/popper.js"></script>
+    <script src="~/assets/vendor/js/bootstrap.js"></script>
+    <script src="~/assets/vendor/libs/node-waves/node-waves.js"></script>
+    <script src="~/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="~/assets/vendor/js/menu.js"></script>
+
+    <!-- endbuild -->
+    <!-- Vendors JS -->
+    <!-- Main JS -->
+    <script src="~/assets/js/main.js"></script>
+
+    <!-- Bootstrap 5 and Popper.js JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <!-- Include Toastr JS at the end of your page, just before the closing </body> tag -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    <!-- Now you can configure Toastr and use it -->
+    @if (!string.IsNullOrEmpty(message))
+    {
+        <script type="text/javascript">
+            if (typeof toastr !== 'undefined') {
+            @if (messageType == "Success")
+            {
+                <text>toastr.success('@message'); </text>
+            }
+            else if (messageType == "Error")
+            {
+                <text>toastr.error('@message'); </text>
+            }
+            else if (messageType == "Info")
+            {
+                <text>toastr.info('@message'); </text>
+            }
+            else if (messageType == "Warning")
+            {
+                <text>toastr.warning('@message'); </text>
+            }
+            else
+            {
+                <text>toastr.info('@message'); </text>  <!-- Default to Info -->
+            }
+                                                                                            }
+            else {
+                console.error('Toastr library is not loaded!');
+            }
+        </script>
+    }
+
+    <!-- Page JS -->
+    <!-- Place this tag before closing body tag for github widget button. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "FaW6IApCW4E6a7Qoeg3pR41JfCpUqbyAAKUnxhHGWg8=",
+  "Source": "LPGxWebApi",
+  "BasePath": "_content/LPGxWebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

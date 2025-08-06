@@ -1,0 +1,653 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\LPGxWebApp.bundle.scp.css",
+      "PackagePath": "staticwebassets\\LPGxWebApp.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\css\\demo.css",
+      "PackagePath": "staticwebassets\\assets\\css\\demo.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\avatars\\1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\avatars\\1.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\avatars\\2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\avatars\\2.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\avatars\\3.png",
+      "PackagePath": "staticwebassets\\assets\\img\\avatars\\3.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\avatars\\4.png",
+      "PackagePath": "staticwebassets\\assets\\img\\avatars\\4.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\avatars\\5.png",
+      "PackagePath": "staticwebassets\\assets\\img\\avatars\\5.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\avatars\\6.png",
+      "PackagePath": "staticwebassets\\assets\\img\\avatars\\6.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\avatars\\7.png",
+      "PackagePath": "staticwebassets\\assets\\img\\avatars\\7.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\backgrounds\\18.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\backgrounds\\18.jpg"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\elements\\1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\elements\\11.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\elements\\12.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\12.jpg"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\elements\\13.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\13.jpg"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\elements\\17.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\17.jpg"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\elements\\18.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\18.jpg"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\elements\\19.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\19.jpg"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\elements\\2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\elements\\20.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\20.jpg"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\elements\\3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\elements\\4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\elements\\5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\elements\\7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\favicon\\favicon.ico",
+      "PackagePath": "staticwebassets\\assets\\img\\favicon\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\icons\\brands\\asana.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\brands\\asana.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\icons\\brands\\aws.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\brands\\aws.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\icons\\brands\\behance.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\brands\\behance.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\icons\\brands\\dribbble.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\brands\\dribbble.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\icons\\brands\\facebook.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\brands\\facebook.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\icons\\brands\\github.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\brands\\github.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\icons\\brands\\google.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\brands\\google.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\icons\\brands\\instagram.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\brands\\instagram.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\icons\\brands\\mailchimp.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\brands\\mailchimp.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\icons\\brands\\slack.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\brands\\slack.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\icons\\brands\\twitter.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\brands\\twitter.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\icons\\misc\\aviato.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\misc\\aviato.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\icons\\misc\\bitbank.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\misc\\bitbank.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\icons\\misc\\triangle-light.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\misc\\triangle-light.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\icons\\misc\\zipcar.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\misc\\zipcar.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\icons\\payments\\american-bank.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\payments\\american-bank.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\icons\\payments\\citi.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\payments\\citi.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\icons\\payments\\digital-ocean.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\payments\\digital-ocean.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\icons\\payments\\gumroad.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\payments\\gumroad.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\icons\\payments\\mastercard-2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\payments\\mastercard-2.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\icons\\payments\\stripes.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icons\\payments\\stripes.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\illustrations\\404.png",
+      "PackagePath": "staticwebassets\\assets\\img\\illustrations\\404.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\illustrations\\auth-basic-mask-light.png",
+      "PackagePath": "staticwebassets\\assets\\img\\illustrations\\auth-basic-mask-light.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\illustrations\\misc-mask-light.png",
+      "PackagePath": "staticwebassets\\assets\\img\\illustrations\\misc-mask-light.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\illustrations\\misc-under-maintenance.png",
+      "PackagePath": "staticwebassets\\assets\\img\\illustrations\\misc-under-maintenance.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\illustrations\\tree-3.png",
+      "PackagePath": "staticwebassets\\assets\\img\\illustrations\\tree-3.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\illustrations\\tree.png",
+      "PackagePath": "staticwebassets\\assets\\img\\illustrations\\tree.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\illustrations\\trophy.png",
+      "PackagePath": "staticwebassets\\assets\\img\\illustrations\\trophy.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\layouts\\layout-container-light.png",
+      "PackagePath": "staticwebassets\\assets\\img\\layouts\\layout-container-light.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\layouts\\layout-fluid-light.png",
+      "PackagePath": "staticwebassets\\assets\\img\\layouts\\layout-fluid-light.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\layouts\\layout-without-menu-light.png",
+      "PackagePath": "staticwebassets\\assets\\img\\layouts\\layout-without-menu-light.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\layouts\\layout-without-navbar-light.png",
+      "PackagePath": "staticwebassets\\assets\\img\\layouts\\layout-without-navbar-light.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\otp\\otp.avif",
+      "PackagePath": "staticwebassets\\assets\\img\\otp\\otp.avif"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\img\\otp\\otp.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\otp\\otp.jpg"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\js\\config.js",
+      "PackagePath": "staticwebassets\\assets\\js\\config.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\js\\dashboards-analytics.js",
+      "PackagePath": "staticwebassets\\assets\\js\\dashboards-analytics.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\js\\extended-ui-perfect-scrollbar.js",
+      "PackagePath": "staticwebassets\\assets\\js\\extended-ui-perfect-scrollbar.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\js\\form-basic-inputs.js",
+      "PackagePath": "staticwebassets\\assets\\js\\form-basic-inputs.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\js\\main.js",
+      "PackagePath": "staticwebassets\\assets\\js\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\js\\pages-account-settings-account.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pages-account-settings-account.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\js\\ui-modals.js",
+      "PackagePath": "staticwebassets\\assets\\js\\ui-modals.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\js\\ui-popover.js",
+      "PackagePath": "staticwebassets\\assets\\js\\ui-popover.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\js\\ui-toasts.js",
+      "PackagePath": "staticwebassets\\assets\\js\\ui-toasts.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\css\\core.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\css\\core.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\css\\pages\\page-account-settings.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\css\\pages\\page-account-settings.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\css\\pages\\page-auth.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\css\\pages\\page-auth.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\css\\pages\\page-icons.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\css\\pages\\page-icons.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\css\\pages\\page-misc.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\css\\pages\\page-misc.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\css\\theme-default.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\css\\theme-default.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\fonts\\remixicon\\remixicon.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\fonts\\remixicon\\remixicon.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\fonts\\remixicon\\remixicon.eot",
+      "PackagePath": "staticwebassets\\assets\\vendor\\fonts\\remixicon\\remixicon.eot"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\fonts\\remixicon\\remixicon.svg",
+      "PackagePath": "staticwebassets\\assets\\vendor\\fonts\\remixicon\\remixicon.svg"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\fonts\\remixicon\\remixicon.ttf",
+      "PackagePath": "staticwebassets\\assets\\vendor\\fonts\\remixicon\\remixicon.ttf"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\fonts\\remixicon\\remixicon.woff",
+      "PackagePath": "staticwebassets\\assets\\vendor\\fonts\\remixicon\\remixicon.woff"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\fonts\\remixicon\\remixicon.woff2",
+      "PackagePath": "staticwebassets\\assets\\vendor\\fonts\\remixicon\\remixicon.woff2"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\js\\helpers.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\js\\helpers.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\js\\menu.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\js\\menu.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\libs\\apex-charts\\apex-charts.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\libs\\apex-charts\\apex-charts.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\libs\\apex-charts\\apexcharts.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\libs\\apex-charts\\apexcharts.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\libs\\highlight\\highlight-github.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\libs\\highlight\\highlight-github.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\libs\\highlight\\highlight.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\libs\\highlight\\highlight.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\libs\\highlight\\highlight.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\libs\\highlight\\highlight.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\libs\\jquery\\jquery.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\libs\\jquery\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\libs\\masonry\\masonry.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\libs\\masonry\\masonry.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\libs\\node-waves\\node-waves.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\libs\\node-waves\\node-waves.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\libs\\node-waves\\node-waves.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\libs\\node-waves\\node-waves.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\libs\\perfect-scrollbar\\perfect-scrollbar.css",
+      "PackagePath": "staticwebassets\\assets\\vendor\\libs\\perfect-scrollbar\\perfect-scrollbar.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\libs\\perfect-scrollbar\\perfect-scrollbar.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\libs\\perfect-scrollbar\\perfect-scrollbar.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\assets\\vendor\\libs\\popper\\popper.js",
+      "PackagePath": "staticwebassets\\assets\\vendor\\libs\\popper\\popper.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\css\\loginstyle.css",
+      "PackagePath": "staticwebassets\\css\\loginstyle.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\images\\backImg.jpg",
+      "PackagePath": "staticwebassets\\images\\backImg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\images\\frontImg.jpg",
+      "PackagePath": "staticwebassets\\images\\frontImg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\AE\\source\\repos\\sanjibdev80\\BuildingWebApi\\LPGxWebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.LPGxWebApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.LPGxWebApp.props",
+      "PackagePath": "build\\LPGxWebApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.LPGxWebApp.props",
+      "PackagePath": "buildMultiTargeting\\LPGxWebApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.LPGxWebApp.props",
+      "PackagePath": "buildTransitive\\LPGxWebApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

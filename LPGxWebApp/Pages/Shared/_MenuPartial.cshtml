@@ -1,0 +1,180 @@
+﻿<!-- Pages/Shared/_MenuPartial.cshtml -->
+@{
+    var userlevel = TempData["userlevel"];
+    var username = TempData["username"];
+    var branchcode = TempData["branchcode"]?.ToString().Trim();
+}
+
+<div class="partial-content">
+    <!-- Menu -->
+    <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+        <div class="app-brand demo">
+            <a href="~/Dashboard/Index" class="app-brand-link">
+                <span class="app-brand-logo demo me-1">
+                    <span style="color: var(--bs-primary)">
+                        <i class="menu-icon tf-icons ri-fire-line"></i>
+                    </span>
+                </span>
+                <span class="app-brand-text demo menu-text fw-semibold ms-0">
+                    <span style="color: var(--bs-primary); font-size: 12px; font-weight: 400;">
+                        @TempData["branchname"] <br>
+                    </span>
+                    <span style="color: var(--bs-primary); font-size: 12px; font-weight: 800;">
+                        @TempData["username"]
+                    </span>
+                </span>
+            </a>
+        </div>
+
+        <div class="menu-inner-shadow"></div>
+
+        <ul class="menu-inner py-1">
+
+            <!-- Dashboard -->
+            <li class="menu-item @(ViewData["ActiveMenu"]?.ToString() == "Dashboard" ? "active" : "")">
+                <a href="~/Dashboard/Index" class="menu-link">
+                    <i class="menu-icon tf-icons ri-home-smile-line"></i>
+                    <div data-i18n="Dashboard">Dashboard</div>
+                </a>
+            </li>
+
+            @if (userlevel != null && (userlevel.ToString() == "1" || userlevel.ToString() == "2" || userlevel.ToString() == "4"))
+            {
+                <!-- Parameters -->
+                <li class="menu-header mt-7"><span class="menu-header-text">Parameters</span></li>
+
+                <!-- Setup -->
+                <li class="menu-item @(ViewData["ActiveMenu"]?.ToString() == "Setup" ? "active open" : (ViewData["OpenMenu"]?.ToString() == "Setup" ? "open" : ""))">
+                    <a href="javascript:void(0)" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons ri-bank-card-2-line"></i>
+                        <div data-i18n="Setup">Setup</div>
+                    </a>
+                    <ul class="menu-sub">
+                        @if (userlevel != null && (userlevel.ToString() == "1"))
+                        {
+                            <li class="menu-item @(ViewData["ActiveMenu"]?.ToString() == "Projects" ? "active" : "")">
+                                <a href="~/Setup/Projects" class="menu-link">
+                                    <div data-i18n="Projects">Setup Project</div>
+                                </a>
+                            </li>
+                            <li class="menu-item @(ViewData["ActiveMenu"]?.ToString() == "Branches" ? "active" : "")">
+                                <a href="~/Setup/Branches" class="menu-link">
+                                    <div data-i18n="Branches">Setup Branch</div>
+                                </a>
+                            </li>
+                        }
+                        @if (userlevel != null && (userlevel.ToString() == "1" || userlevel.ToString() == "2" || userlevel.ToString() == "4"))
+                        {
+                            <li class="menu-item @(ViewData["ActiveMenu"]?.ToString() == "Products" ? "active" : "")">
+                                <a href="~/Setup/Products" class="menu-link">
+                                    <div data-i18n="Products">Setup Product</div>
+                                </a>
+                            </li>
+                            <li class="menu-item @(ViewData["ActiveMenu"]?.ToString() == "Distributors" ? "active" : "")">
+                                <a href="~/Setup/Distributors" class="menu-link">
+                                    <div data-i18n="Distributors">Mark Distributor</div>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </li>
+
+                <!-- User Management -->
+                <li class="menu-item @(ViewData["ActiveMenu"]?.ToString() == "Users" ? "active open" : (ViewData["OpenMenu"]?.ToString() == "Users" ? "open" : ""))">
+                    <a href="javascript:void(0)" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons ri-shield-keyhole-line"></i>
+                        <div data-i18n="Users">User Management</div>
+                    </a>
+                    <ul class="menu-sub">
+                        @if (userlevel != null && (userlevel.ToString() == "1" || userlevel.ToString() == "2" || userlevel.ToString() == "4"))
+                        {
+                            @if (userlevel != null && (userlevel.ToString() == "1"))
+                            {
+                                <li class="menu-item @(ViewData["ActiveMenu"]?.ToString() == "UserList" ? "active" : "")">
+                                    <a href="~/Users/UserList" class="menu-link">
+                                        <div data-i18n="UserList">User Registration</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item @(ViewData["ActiveMenu"]?.ToString() == "UserLevel" ? "active" : "")">
+                                    <a href="~/Users/UserLevel" class="menu-link">
+                                        <div data-i18n="UserLevel">User Level</div>
+                                    </a>
+                                </li>
+
+                                <li class="menu-item @(ViewData["ActiveMenu"]?.ToString() == "UserMapping" ? "active" : "")">
+                                    <a href="~/Users/UserMapping" class="menu-link">
+                                        <div data-i18n="UserMapping">User Mapping</div>
+                                    </a>
+                                </li>
+                            }
+                            <li class="menu-item @(ViewData["ActiveMenu"]?.ToString() == "Salesman" ? "active" : "")">
+                                <a href="~/Users/Salesman" class="menu-link">
+                                    <div data-i18n="Salesman">Salesman Registration</div>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </li>
+            }
+
+            @if (userlevel != null && (userlevel.ToString() == "1" || userlevel.ToString() == "2" || userlevel.ToString() == "3"))
+            {
+                <!-- Operation -->
+                <li class="menu-header mt-7"><span class="menu-header-text">Operation</span></li>
+
+                <!-- Sale -->
+                <li class="menu-item @(ViewData["ActiveMenu"]?.ToString() == "Sale" ? "active" : "")">
+                    <a href="~/Operation/Sale" class="menu-link">
+                        <i class="menu-icon tf-icons ri-money-dollar-circle-line"></i>
+                        <div data-i18n="Sale">Sale</div>
+                    </a>
+                </li>
+
+                <!-- Return -->
+                <li class="menu-item @(ViewData["ActiveMenu"]?.ToString() == "Return" ? "active" : "")">
+                    <a href="~/Operation/Return" class="menu-link">
+                        <i class="menu-icon tf-icons ri-wallet-line"></i>
+                        <div data-i18n="Return">Return Stock</div>
+                    </a>
+                </li>
+
+            }
+
+            <!--  Reports -->
+            <li class="menu-header mt-7"><span class="menu-header-text">Reports</span></li>
+
+            @if (userlevel != null && (userlevel.ToString() == "1" || userlevel.ToString() == "2" || userlevel.ToString() == "3" || userlevel.ToString() == "4"))
+            {
+                <!--  Report -->
+                <li class="menu-item @(ViewData["ActiveMenu"]?.ToString() == "Report" ? "active open" : (ViewData["OpenMenu"]?.ToString() == "Report" ? "open" : ""))">
+                    <a href="javascript:void(0)" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons ri-box-3-line"></i>
+                        <div data-i18n="Report">Report</div>
+                    </a>
+                    <ul class="menu-sub">
+                        <li class="menu-item @(ViewData["ActiveMenu"]?.ToString() == "DailyStockReport" ? "active" : "")">
+                            <a href="~/Report/DailyStockReport" class="menu-link">
+                                <div data-i18n="DailyStockReport">Daily Stock</div>
+                            </a>
+                        </li>
+                        <li class="menu-item @(ViewData["ActiveMenu"]?.ToString() == "SalesReport" ? "active" : "")">
+                            <a href="~/Report/SalesReport" class="menu-link">
+                                <div data-i18n="SalesReport">Sales</div>
+                            </a>
+                        </li>
+                        <li class="menu-item @(ViewData["ActiveMenu"]?.ToString() == "ReturnReport" ? "active" : "")">
+                            <a href="~/Report/ReturnReport" class="menu-link">
+                                <div data-i18n="ReturnReport">Return Stock</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+            }
+
+        </ul>
+
+    </aside>
+    <!-- / Menu -->
+</div>
+

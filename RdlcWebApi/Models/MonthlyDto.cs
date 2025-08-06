@@ -1,0 +1,24 @@
+﻿namespace RdlcgWebApi.ReportDataTable
+{
+    public class MonthlyDto
+    {
+        public string? Apartment { get; set; }
+        public string? Name { get; set; }
+        public decimal January { get; set; }
+        public decimal February { get; set; }
+        public decimal March { get; set; }
+        public decimal April { get; set; }
+        public decimal May { get; set; }
+        public decimal June { get; set; }
+        public decimal July { get; set; }
+        public decimal August { get; set; }
+        public decimal September { get; set; }
+        public decimal October { get; set; }
+        public decimal November { get; set; }
+        public decimal December { get; set; }
+        public decimal Total { get; set; }
+        public string? Year { get; set; }
+        public string? BillType { get; set; }
+        public int Serial { get; set; }
+    }
+}

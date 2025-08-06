@@ -1,0 +1,21 @@
+﻿<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <!--<title> Login and Registration Form in HTML & CSS | CodingLab </title>-->
+    <link rel="stylesheet" href="~/css/loginstyle.css">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Set the favicon -->
+    <link rel="icon" href="~/images/logo.png" type="image/png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

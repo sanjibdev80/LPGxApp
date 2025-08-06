@@ -1,0 +1,144 @@
+﻿@page
+@model LoginIndexModel
+
+@{
+    ViewData["Title"] = "Login Information";
+}
+@{
+    // Retrieve the message and message type directly, if necessary
+    var message = TempData["Message"] as string;
+    var messageType = TempData["MessageType"] as string;
+}
+
+<link rel="stylesheet" href="~/css/loginstyle.css" asp-append-version="true" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+<!-- Toastr CSS in <head> -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+
+<div class="container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+        <div class="front">
+            <img src="~/images/frontImg.jpg" alt="">
+            <div class="text">
+                <span class="text-1">&nbsp;</span>
+                <span class="text-1">&nbsp;</span>
+                @* <span class="text-1">Smart Living, Simplified: <br> Your Apartment, Your Way!</span> *@
+            </div>
+        </div>
+        <div class="back">
+            <img class="backImg" src="~/images/backImg.jpg" alt="">
+            <div class="text">
+                <span class="text-1">Complete miles of journey <br> with one step</span>
+                <span class="text-2">Let's get started</span>
+            </div>
+        </div>
+    </div>
+    <div class="forms">
+        <div class="form-content">
+            <div class="login-form">
+                <div class="title">Login</div>
+                <div>&nbsp;</div>
+                <form method="post">
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <label for="PhoneNumber">Phone Number</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <!-- Country Code Dropdown -->
+                        <div class="col-md-3">
+                            <select id="CountryCode" name="CountryCode" class="form-control">
+                                <option value="88">+88 (Bangladesh)</option>
+                                <option value="91">+91 (India)</option>
+                                <option value="92">+92 (Pakistan)</option>
+                                <option value="94">+94 (Sri Lanka)</option>
+                                <option value="1">+1  (USA/Canada)</option>
+                                <!-- Add more country codes as needed -->
+                            </select>
+                        </div>
+
+                        <!-- Phone Number Input -->
+                        <div class="col-md-9">
+                            <input type="text" id="PhoneNumber" name="PhoneNumber" class="form-control" placeholder="Enter phone number" maxlength="15" required />
+                        </div>
+                    </div>
+
+                    <div class="button input-box">
+                        <input type="submit" value="Next >">
+                    </div>
+                </form>
+            </div>
+            <div class="signup-form">
+                <div class="title">Signup</div>
+                <form action="#">
+                    <div class="input-boxes">
+                        <div class="input-box">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Enter your name" required>
+                        </div>
+                        <div class="input-box">
+                            <i class="fas fa-envelope"></i>
+                            <input type="text" placeholder="Enter your email" required>
+                        </div>
+                        <div class="input-box">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" placeholder="Enter your password" required>
+                        </div>
+                        <div class="button input-box">
+                            <input type="submit" value="Sumbit">
+                        </div>
+                        <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.getElementById("PhoneNumber").addEventListener("input", function (e) {
+            var value = e.target.value;
+            // Allow only numeric input and ensure it's exactly 15 digits
+            e.target.value = value.replace(/[^0-9]/g, "").slice(0, 15);
+        });
+    </script>
+
+    <!-- Include Toastr JS at the end of your page, just before the closing </body> tag -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    <!-- Now you can configure Toastr and use it -->
+    @if (!string.IsNullOrEmpty(message))
+    {
+        <script type="text/javascript">
+            if (typeof toastr !== 'undefined') {
+            @if (messageType == "Success")
+            {
+                <text>toastr.success('@message'); </text>
+            }
+            else if (messageType == "Error")
+            {
+                <text>toastr.error('@message'); </text>
+            }
+            else if (messageType == "Info")
+            {
+                <text>toastr.info('@message'); </text>
+            }
+            else if (messageType == "Warning")
+            {
+                <text>toastr.warning('@message'); </text>
+            }
+            else
+            {
+                <text>toastr.info('@message'); </text>  <!-- Default to Info -->
+            }
+                                                                                                                                                                                                                    }
+            else {
+                console.error('Toastr library is not loaded!');
+            }
+        </script>
+    }
+
+}

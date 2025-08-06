@@ -1,0 +1,154 @@
+﻿@page
+@model LoginVerifyOTPModel
+
+@{
+    ViewData["Title"] = "Verify OTP";
+}
+@{
+    // Retrieve the message and message type directly, if necessary
+    var message = TempData["Message"] as string;
+    var messageType = TempData["MessageType"] as string;
+}
+
+<link rel="stylesheet" href="~/css/loginstyle.css" asp-append-version="true" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+<!-- Toastr CSS in <head> -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+
+<div class="container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+        <div class="front">
+            <img src="~/images/frontImg.jpg" alt="">
+            <div class="text">
+                <span class="text-1">&nbsp;</span>
+                <span class="text-1">&nbsp;</span>
+                @* <span class="text-1">Smart Living, Simplified: <br> Your Apartment, Your Way!</span> *@
+            </div>
+        </div>
+        <div class="back">
+            <img class="backImg" src="~/images/backImg.jpg" alt="">
+            <div class="text">
+                <span class="text-1">Complete miles of journey <br> with one step</span>
+                <span class="text-2">Let's get started</span>
+            </div>
+        </div>
+    </div>
+    <div class="forms">
+        <div class="form-content">
+            <div class="signup-form">
+                <div class="title">@ViewData["Title"]</div>
+                <div>&nbsp;</div>
+                <form method="post">
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <label for="PhoneNumber">We have sent a verification code</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <!-- OTP box -->
+                        <div class="col-md-2">
+                            &nbsp;
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" id="otp1" name="otp1" class="form-control" placeholder="" maxlength="1" oninput="moveFocus(this, 'otp2')"  required />
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" id="otp2" name="otp2" class="form-control" placeholder="" maxlength="1" oninput="moveFocus(this, 'otp3')" required />
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" id="otp3" name="otp3" class="form-control" placeholder="" maxlength="1" oninput="moveFocus(this, 'otp4')" required />
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" id="otp4" name="otp4" class="form-control" placeholder="" maxlength="1" required />
+                        </div>
+                        <div class="col-md-2">
+                            &nbsp;
+                        </div>
+                    </div>
+
+                    <div class="button input-box">
+                        <input type="submit" value="Next >">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.getElementById("otp1").addEventListener("input", function (e) {
+            var value = e.target.value;
+            // Allow only numeric input and ensure it's exactly 1 digits
+            e.target.value = value.replace(/[^0-9]/g, "").slice(0, 1);
+        });
+        document.getElementById("otp2").addEventListener("input", function (e) {
+            var value = e.target.value;
+            // Allow only numeric input and ensure it's exactly 1 digits
+            e.target.value = value.replace(/[^0-9]/g, "").slice(0, 1);
+        });
+        document.getElementById("otp3").addEventListener("input", function (e) {
+            var value = e.target.value;
+            // Allow only numeric input and ensure it's exactly 1 digits
+            e.target.value = value.replace(/[^0-9]/g, "").slice(0, 1);
+        });
+        document.getElementById("otp4").addEventListener("input", function (e) {
+            var value = e.target.value;
+            // Allow only numeric input and ensure it's exactly 1 digits
+            e.target.value = value.replace(/[^0-9]/g, "").slice(0, 1);
+        });
+    </script>
+
+    <script>
+
+        function moveFocus(currentInput, nextInputId) {
+            // If the current input has a value (i.e., user entered something), move to next field
+            if (currentInput.value.length === 1) {
+                var nextInput = document.getElementById(nextInputId);
+                if (nextInput) {
+                    nextInput.focus();
+                }
+            }
+        }
+
+    </script>
+
+
+    <!-- Include Toastr JS at the end of your page, just before the closing </body> tag -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    <!-- Now you can configure Toastr and use it -->
+    @if (!string.IsNullOrEmpty(message))
+    {
+        <script type="text/javascript">
+            if (typeof toastr !== 'undefined') {
+            @if (messageType == "Success")
+            {
+                <text>toastr.success('@message'); </text>
+            }
+            else if (messageType == "Error")
+            {
+                <text>toastr.error('@message'); </text>
+            }
+            else if (messageType == "Info")
+            {
+                <text>toastr.info('@message'); </text>
+            }
+            else if (messageType == "Warning")
+            {
+                <text>toastr.warning('@message'); </text>
+            }
+            else
+            {
+                <text>toastr.info('@message'); </text>  <!-- Default to Info -->
+            }
+                                                                                                                                                                                                                                }
+            else {
+                console.error('Toastr library is not loaded!');
+            }
+        </script>
+    }
+
+}

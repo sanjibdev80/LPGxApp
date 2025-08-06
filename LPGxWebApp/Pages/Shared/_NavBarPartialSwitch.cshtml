@@ -1,0 +1,136 @@
+﻿@using LPGxWebApp.Response;
+<!-- Pages/Shared/_NavBarPartial.cshtml -->
+@{
+    var username = TempData["username"];
+    var levelname = TempData["levelname"];
+    var branchname = TempData["branchname"];
+}
+
+<div class="partial-content">
+    <!-- Navbar -->
+    <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+         id="layout-navbar">
+        <div class="layout-menu-toggle navbar-nav align-items-xl-center me-4 me-xl-0 d-xl-none">
+            <a class="nav-item nav-link px-0 me-xl-6" href="javascript:void(0)">
+                <i class="ri-menu-fill ri-24px"></i>
+            </a>
+        </div>
+
+        <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+            <ul class="navbar-nav flex-row align-items-center ms-auto">
+
+                <!-- User -->
+                <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                    <a class="nav-link dropdown-toggle hide-arrow p-0"
+                       href="javascript:void(0);"
+                       data-bs-toggle="dropdown">
+                        <div class="avatar avatar-online">
+                            <img src="~/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end mt-3 py-2">
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0 me-2">
+                                        <div class="avatar avatar-online">
+                                            <img src="~/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-0 small">@username</h6>
+                                        <small class="text-muted">@levelname</small>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="dropdown-divider"></div>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <span style="color: var(--bs-primary)">
+                                    <i class="ri-building-line ri-22px me-2"></i>
+                                </span>
+                                <span class="align-middle">
+                                    @TempData["branchname"]
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <span class="d-flex align-items-center">
+
+                                    <i class="ri-settings-4-line ri-22px me-2"></i>
+
+                                    <!-- "Switch" text and badge in the same row -->
+                                    <span class="flex-grow-1 align-middle">
+                                        Switch:
+                                    </span>
+
+                                    <!-- Displaying the count of Branches dynamically -->
+                                    <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger h-px-20 d-flex align-items-center justify-content-center ms-2">
+                                        @if (TempData["Branches"] is List<BranchResponse> buildingListCount && buildingListCount.Any())
+                                        {
+                                            @buildingListCount.Count()
+                                        }
+                                        else
+                                        {
+                                            <span>0</span>
+                                        }
+                                    </span>
+                                </span>
+                                <form id="switchForm" action="~/Dashboard/Index" method="POST">
+                                    <!-- Dropdown for selecting building -->
+                                    <select class="form-control" id="bldcodeswitch" name="bldcodeswitch" onchange="updateHiddenFields(); this.form.submit();">
+                                        <option value="" disabled selected>------Select-----</option>
+                                        @if (TempData["Branches"] is List<BranchResponse> buildingList && buildingList.Any())
+                                        {
+                                            @foreach (var apt in buildingList)
+                                            {
+                                                <!-- Check if the current building should be selected -->
+                                                <option value="@apt.BRANCHCODE" data-projectcodeswitch="@apt.PROJECTCODE" data-countrycodeswitch="@apt.COUNTRYCODE">@apt.BLDNAME</option>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <option value="" disabled>No data available</option>
+                                        }
+                                    </select>
+                                    <!-- Hidden inputs for project and country codes -->
+                                    <input type="hidden" id="projectcodeswitch" name="projectcodeswitch" />
+                                    <input type="hidden" id="countrycodeswitch" name="countrycodeswitch" />
+                                </form>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="dropdown-divider"></div>
+                        </li>
+                        <li>
+                            <div class="d-grid px-4 pt-2 pb-1">
+                                <a class="btn btn-danger d-flex" href="~/Login/Index">
+                                    <small class="align-middle">Logout</small>
+                                    <i class="ri-logout-box-r-line ms-2 ri-16px"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <!--/ User -->
+            </ul>
+        </div>
+    </nav>
+    <!-- / Navbar -->
+</div>
+
+<script>
+    function updateHiddenFields() {
+        var selectedOption = document.getElementById("bldcodeswitch").selectedOptions[0];
+        var projectCode = selectedOption.getAttribute("data-projectcodeswitch");
+        var countryCode = selectedOption.getAttribute("data-countrycodeswitch");
+
+        // Update hidden inputs with the selected values
+        document.getElementById("projectcodeswitch").value = projectCode;
+        document.getElementById("countrycodeswitch").value = countryCode;
+    }
+</script>

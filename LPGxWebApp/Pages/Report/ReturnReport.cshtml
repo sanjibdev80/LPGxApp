@@ -1,0 +1,533 @@
+﻿@page
+@using LPGxWebApp.GlobalData;
+@using LPGxWebApp.Response;
+@model ReturnReportModel
+@{
+    ViewData["Title"] = "Return";
+    ViewData["ActiveMenu"] = "Return";  // Set active menu here
+    ViewData["OpenMenu"] = "Report";  // Set open menu (for example, if the Setup menu should be expanded)
+}
+@{
+    // Retrieve the message and message type directly, if necessary
+    var message = TempData["Message"] as string;
+    var messageType = TempData["MessageType"] as string;
+    var reportDate = TempData["ReportDate"] as string ?? string.Empty;
+
+    // Retrieve the current time
+    var currentTime = DateTime.Now.ToString("yyyy-MM-ddTHH:mm");
+
+    // Retrieve VerifyLoginData from session and check for null
+    var verifyLoginData = HttpContext.Session.GetObject<VerifyLoginData>("VerifyLoginData");
+
+    // Redirect to Login if VerifyLoginData is null
+    if (verifyLoginData == null)
+    {
+        RedirectToPage("/Login/Index");
+        return; // Ensure no further code is executed after redirect
+    }
+
+    // Use the signon name from the verified login data
+    var username = verifyLoginData.UserName;
+    var userlevel = verifyLoginData.UserLevel;
+    var branchcode = verifyLoginData.BranchCode;
+}
+
+<!doctype html>
+
+<html lang="en"
+      class="light-style layout-menu-fixed layout-compact"
+      dir="ltr"
+      data-theme="theme-default"
+      data-assets-path="~/assets/"
+      data-template="vertical-menu-template-free"
+      data-style="light">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>@ViewData["Title"]</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="~/images/logo.png" type="image/png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&ampdisplay=swap"
+          rel="stylesheet" />
+
+    <link rel="stylesheet" href="~/assets/vendor/fonts/remixicon/remixicon.css" />
+
+    <!-- Menu waves for no-customizer fix -->
+    <link rel="stylesheet" href="~/assets/vendor/libs/node-waves/node-waves.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="~/assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="~/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="~/assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="~/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+    <!-- Include SheetJS from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+
+    <!-- FontAwesome CDN for spinner -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- Change spinner Style-->
+    <style>
+        /* Center the spinner container in the middle of the screen */
+        .spinner-container {
+            position: fixed; /* Fixed positioning to make it stay in place when scrolling */
+            top: 0;
+            left: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            display: flex; /* Flexbox layout */
+            justify-content: center; /* Horizontal centering */
+            align-items: center; /* Vertical centering */
+            background-color: rgba(255, 255, 255, 0.3); /* Transparent White */
+            z-index: 9999; /* Ensure it's on top of other content */
+        }
+
+        /* Align spinner and text horizontally */
+        .demo-inline-spacing {
+            display: flex; /* Use flexbox to align items in a row */
+            align-items: center; /* Vertically center the spinner and text */
+            gap: 10px; /* Add space between the spinner and the text */
+        }
+
+        .spinner-border {
+            width: 5rem;
+            height: 5rem;
+        }
+
+        .spinner-grow {
+            position: relative;
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .spinner-text {
+            color: #fff;
+            font-size: 20px;
+        }
+    </style>
+
+    <!-- Include Print/Table Style -->
+    <style>
+        th, td {
+            font-size: 9pt;
+        }
+
+        th {
+            font-weight: bold;
+        }
+
+        #printfooter h6 {
+            font-size: 9px; /* Set font size smaller */
+            text-align: right; /* Align text to the right */
+            margin: 0; /* Remove margin */
+        }
+    </style>
+
+    <!-- Page CSS -->
+    <!-- Helpers -->
+    <script src="~/assets/vendor/js/helpers.js"></script>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="~/assets/js/config.js"></script>
+</head>
+
+<body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+            <!-- Set Temp data -->
+            @{
+                TempData["username"] = username;
+                TempData["userlevel"] = userlevel;
+                TempData["branchcode"] = branchcode;
+
+                if (userlevel == 1)
+                    TempData["levelname"] = "Super Admin";
+                else if (userlevel == 2)
+                    TempData["levelname"] = "Admin";
+                else if (userlevel == 3)
+                    TempData["levelname"] = "Salesman";
+                else if (userlevel == 4)
+                    TempData["levelname"] = "Management";
+            }
+            <!-- Menu -->
+            @{
+                await Html.RenderPartialAsync("Shared/_MenuPartial");
+            }
+            <!-- / Menu -->
+            <!-- Layout container -->
+            <div class="layout-page">
+                <!-- Navbar -->
+                @{
+                    await Html.RenderPartialAsync("Shared/_NavBarPartial");
+                }
+                <!-- / Navbar -->
+                <!-- Content wrapper -->
+                <div class="content-wrapper">
+                    <!-- Header -->
+                    <div id="printheader" style="display: none;">
+                        <h5 class="text-center">@ViewData["Title"]</h5>
+                    </div>
+
+                    <!-- Search -->
+                    <div class="container-xxl flex-grow-1 container-p-y py-5" id="myFormDiv">
+                        <div class="row gy-6">
+                            <div class="card shadow-sm p-4">
+                                <h5>@ViewData["Title"] Report</h5>
+                                <form id="billingForm" action="~/Report/ReturnReport" method="POST">
+                                    <div class="row g-3">
+
+                                        <!-- reportDate -->
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <label for="reportDate" class="form-label">Report Date</label>
+                                                <input type="date" class="form-control" id="reportDate" name="reportDate" value="@currentTime" required />
+                                                <div class="invalid-feedback">Start Date required</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- 3 Buttons -->
+                                        <div class="col-md-8 d-flex justify-content-center align-items-center">
+                                            <div class="mb-3 d-flex justify-content-center gap-3">
+                                                <!-- Search Button -->
+                                                <button type="submit" class="btn btn-primary" onclick="simulateApiCall()">
+                                                    <i class="ri-search-line me-2"></i> <!-- Search Icon -->
+                                                    <span>Search</span>
+                                                </button>
+
+                                                <!-- Print Button -->
+                                                <button type="button" class="btn btn-outline-primary" onclick="PrintDivContent('myPrintDiv')">
+                                                    <i class="ri-printer-line me-2"></i> <!-- Print Icon -->
+                                                    <span>Print</span>
+                                                </button>
+
+                                                <!-- Export Button -->
+                                                <button type="button" class="btn btn-outline-primary" onclick="exportData()">
+                                                    <i class="ri-download-line me-2"></i> <!-- Export Icon -->
+                                                    <span>Export</span>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Spinner -->
+                    <div id="spinner" style="display: none;">
+                        <div class="spinner-container">
+                            <div class="demo-inline-spacing spinner-text">
+                                <div class="spinner-border text-primary" role="status"></div>
+                                <span class="text-primary" style="font-size: 20px;"> Please wait...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Report -->
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        <div class="row gy-6">
+                            <!-- Basic Bootstrap Table -->
+                            <div class="card">
+                                <div id="myPrintDiv">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <h5 class="mb-0">&nbsp;&nbsp;</h5>
+
+                                        <!-- Only show Report if reportDate is not empty -->
+                                        @if (!string.IsNullOrEmpty(reportDate))
+                                        {
+                                            <span class="text-right small">Report: @reportDate</span>
+                                        }
+                                    </div>
+                                    <div class="table-responsive text-nowrap" id="myTableDiv">
+                                        <table class="table" id="myTable">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>NAV</th>
+                                                    <th>DUB</th>
+                                                    <th>UNI</th>
+                                                    <th>OME</th>
+                                                    <th>MAX</th>
+                                                    <th>FRESH</th>
+                                                    <th>KH</th>
+                                                    <th>BM</th>
+                                                    <th>DEL</th>
+                                                    <th>JAM</th>
+                                                    <th>BEX</th>
+                                                    <th>BEN</th>
+                                                    <th>SEN</th>
+                                                    <th>BAS</th>
+                                                    <th>JMI</th>
+                                                    <th>GGAS</th>
+                                                    <th>TMSS</th>
+                                                    <th>AY</th>
+                                                    <th>ETC</th>
+                                                    <th>TOTAL</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="table-border-bottom-0 fs-6 small">
+                                                @if (Model.ReturnReport != null && Model.ReturnReport.Any())
+                                                {
+                                                    @for (int i = 0; i < Model.ReturnReport.Count(); i++)
+                                                    {
+                                                        var project = Model.ReturnReport.ElementAt(i);
+                                                        <tr>
+                                                            <td>@project.Name</td>
+                                                            <td>@project.NAV</td>
+                                                            <td>@project.DUB</td>
+                                                            <td>@project.UNI</td>
+                                                            <td>@project.OME</td>
+                                                            <td>@project.MAX</td>
+                                                            <td>@project.FRESH</td>
+                                                            <td>@project.KH</td>
+                                                            <td>@project.BM</td>
+                                                            <td>@project.DEL</td>
+                                                            <td>@project.JAM</td>
+                                                            <td>@project.BEX</td>
+                                                            <td>@project.BEN</td>
+                                                            <td>@project.SEN</td>
+                                                            <td>@project.BAS</td>
+                                                            <td>@project.JMI</td>
+                                                            <td>@project.GGAS</td>
+                                                            <td>@project.TMSS</td>
+                                                            <td>@project.AY</td>
+                                                            <td>@project.ETC</td>
+                                                            <td>
+                                                                @(project.NAV + project.DUB + project.UNI + project.OME + project.MAX + project.FRESH
+                                                                    + project.KH + project.BM + project.DEL + project.JAM + project.BEX + project.BEN
+                                                                    + project.SEN + project.BAS + project.JMI + project.GGAS + project.TMSS
+                                                                    + project.AY + project.ETC)
+                                                            </td>
+                                                        </tr>
+                                                    }
+
+                                                }
+                                                else
+                                                {
+                                                    <tr>
+                                                        <td colspan="21" class="text-center">No record found.</td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <span>&nbsp;</span>
+                                </div>
+                            </div>
+                            <!--/ Basic Bootstrap Table -->
+                        </div>
+                    </div>
+
+                    <!-- Footer -->
+                    <div id="printfooter" style="display: none;">
+                        <hr />
+                        <h6 class="text-right small">Print Date: </h6>
+                    </div>
+
+                    <!-- Footer -->
+                    @{
+                        await Html.RenderPartialAsync("Shared/_FooterPartial");
+                    }
+                    <!-- / Footer -->
+
+                    <div class="content-backdrop fade"></div>
+                </div>
+                <!-- Content wrapper -->
+            </div>
+            <!-- / Layout page -->
+        </div>
+
+        <!-- Overlay -->
+        <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    <!-- / Layout wrapper -->
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="~/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="~/assets/vendor/libs/popper/popper.js"></script>
+    <script src="~/assets/vendor/js/bootstrap.js"></script>
+    <script src="~/assets/vendor/libs/node-waves/node-waves.js"></script>
+    <script src="~/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="~/assets/vendor/js/menu.js"></script>
+
+    <!-- endbuild -->
+    <!-- Vendors JS -->
+    <!-- Main JS -->
+    <script src="~/assets/js/main.js"></script>
+
+    <!-- Bootstrap 5 and Popper.js JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        function PrintDivContent(divId) {
+            // Find Elements
+            var printContent = document.getElementById(divId);
+            var formdiv = document.getElementById("myFormDiv");
+            var tablediv = document.getElementById("myTableDiv");
+            var header = document.getElementById("printheader");
+            var footer = document.getElementById("printfooter");
+
+            // Find the first contact div in the loop
+            var avatars = printContent.querySelectorAll("#avatar");
+            var ticks = printContent.querySelectorAll("#tick");
+            var ticks2 = printContent.querySelectorAll("#tick2");
+            var contacts = printContent.querySelectorAll("#contact");
+
+            // Hide all URL links and any other unwanted elements
+            var urlElements = printContent.querySelectorAll('a[href^="https://"], a[href^="http://"]');
+            var textElements = printContent.querySelectorAll('p, span, div, li'); // You can add other elements as necessary
+
+            // Temporarily hide the avatar before printing
+            formdiv.style.display = "none";
+
+            // Temporarily remove the text-nowrap class before printing
+            tablediv.classList.remove("text-nowrap");
+
+            // Hide all avatar elements in the loop
+            avatars.forEach(function (avatar) {
+                avatar.style.display = "none";
+            });
+
+            // Hide all tick elements in the loop
+            ticks.forEach(function (tick) {
+                tick.style.display = "none";
+            });
+
+            // Hide all tick2 elements in the loop
+            ticks2.forEach(function (tick2) {
+                tick2.style.display = "none";
+            });
+
+            // Hide all contact elements in the loop
+            contacts.forEach(function (contact) {
+                contact.style.display = "none";
+            });
+
+            // Hide the header and footer for printing
+            if (header) header.style.display = "block";
+            if (footer) footer.style.display = "block";
+
+            // Hide all <a> elements with URLs
+            urlElements.forEach(function (link) {
+                link.style.display = "none";
+            });
+
+            // Hide text elements containing URLs
+            textElements.forEach(function (element) {
+                if (element.textContent && /https?:\/\/[^\s]+/i.test(element.textContent)) {
+                    element.style.display = "none";
+                }
+            });
+
+            // Set the current print date in the footer
+            if (footer) {
+                var currentDate = new Date();
+
+                // Manually format the date as dd-MMM-yyyy hh:mm tt
+                var day = currentDate.getDate();
+                var month = currentDate.toLocaleString('default', { month: 'short' }); // Get short month name (e.g., Nov)
+                var year = currentDate.getFullYear();
+                var hours = currentDate.getHours();
+                var minutes = currentDate.getMinutes();
+                var ampm = hours >= 12 ? 'PM' : 'AM';
+
+                // Convert 24-hour time to 12-hour format
+                hours = hours % 12;
+                hours = hours ? hours : 12; // the hour '0' should be '12'
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+
+                // Create the formatted date string
+                var formattedDate = day + '-' + month + '-' + year + ' ' + hours + ':' + minutes + ' ' + ampm;
+
+                // Update the footer with the formatted date
+                footer.querySelector('h6').textContent = 'Print Date: ' + formattedDate;
+                footer.style.display = 'block'; // Show the footer
+            }
+
+            window.print();
+
+            // Show all the avatar numbers again after printing
+            avatars.forEach(function (avatar) {
+                avatar.style.display = "block";
+            });
+
+            // Show all the tick numbers again after printing
+            ticks.forEach(function (tick) {
+                tick.style.display = "block";
+            });
+
+            // Show all the tick2 numbers again after printing
+            ticks2.forEach(function (tick2) {
+                tick2.style.display = "block";
+            });
+
+            // Show all the contact numbers again after printing
+            contacts.forEach(function (contact) {
+                contact.style.display = "block";
+            });
+
+            // After printing, restore the header, footer, and other elements
+            setTimeout(function () {
+                if (header) header.style.display = "none";
+                if (footer) footer.style.display = "none";
+                formdiv.style.display = "block";
+                tablediv.classList.add("text-nowrap");
+            }, 1000); // Delay to ensure printing is completed
+        }
+    </script>
+    <script>
+        function exportData() {
+            // Get the table element
+            var table = document.getElementById("myTable");
+
+            // Get the current date and time
+            var currentDate = new Date();
+
+            // Format the date and time as dd-MMM-yyyy_hh-mm-ss
+            var day = currentDate.getDate();
+            var month = currentDate.toLocaleString('default', { month: 'short' }); // Short month name (e.g., Nov)
+            var year = currentDate.getFullYear();
+            var hours = currentDate.getHours();
+            var minutes = currentDate.getMinutes();
+            var seconds = currentDate.getSeconds();
+
+            // Create a formatted string for the filename
+            var formattedDate = day + '-' + month + '-' + year + '_' + hours + '-' + minutes + '-' + seconds;
+
+            // Get the value of ActiveMenu from ViewData (this will be passed to the view from the controller)
+            var activeMenu = '@ViewData["ActiveMenu"]'; // Razor syntax to inject the server-side value
+
+            // Generate the filename by concatenating ActiveMenu and formattedDate
+            var filename = activeMenu + '_' + formattedDate + '.xlsx';
+
+            // Generate the workbook
+            var wb = XLSX.utils.table_to_book(table, { sheet: "Sheet1" });
+
+            // Write the file with the generated filename
+            XLSX.writeFile(wb, filename);
+        }
+    </script>
+
+    <!-- Page JS -->
+    <!-- Place this tag before closing body tag for github widget button. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+</html>
+
+

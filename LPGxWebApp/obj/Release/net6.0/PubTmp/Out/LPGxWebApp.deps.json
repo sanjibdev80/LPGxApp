@@ -1,0 +1,229 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "LPGxWebApp/1.0.0": {
+        "dependencies": {
+          "AForge.Video": "2.2.5",
+          "AForge.Video.DirectShow": "2.2.5",
+          "Microsoft.AspNet.Mvc": "5.3.0",
+          "Microsoft.AspNet.Razor": "3.3.0",
+          "Microsoft.AspNet.WebPages": "3.3.0",
+          "Microsoft.Web.Infrastructure": "2.0.0",
+          "Newtonsoft.Json": "13.0.3",
+          "QRCoder": "1.4.1",
+          "QrCode.Net": "0.4.0",
+          "System.Drawing.Common": "9.0.0"
+        },
+        "runtime": {
+          "LPGxWebApp.dll": {}
+        }
+      },
+      "AForge/2.2.5": {
+        "runtime": {
+          "lib/AForge.dll": {
+            "assemblyVersion": "2.2.5.0",
+            "fileVersion": "2.2.5.0"
+          }
+        }
+      },
+      "AForge.Video/2.2.5": {
+        "dependencies": {
+          "AForge": "2.2.5"
+        },
+        "runtime": {
+          "lib/AForge.Video.dll": {
+            "assemblyVersion": "2.2.5.0",
+            "fileVersion": "2.2.5.0"
+          }
+        }
+      },
+      "AForge.Video.DirectShow/2.2.5": {
+        "dependencies": {
+          "AForge.Video": "2.2.5"
+        },
+        "runtime": {
+          "lib/AForge.Video.DirectShow.dll": {
+            "assemblyVersion": "2.2.5.0",
+            "fileVersion": "2.2.5.0"
+          }
+        }
+      },
+      "Microsoft.AspNet.Mvc/5.3.0": {
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "3.3.0",
+          "Microsoft.AspNet.WebPages": "3.3.0"
+        },
+        "runtime": {
+          "lib/net45/System.Web.Mvc.dll": {
+            "assemblyVersion": "5.3.0.0",
+            "fileVersion": "5.3.61130.707"
+          }
+        }
+      },
+      "Microsoft.AspNet.Razor/3.3.0": {
+        "runtime": {
+          "lib/net45/System.Web.Razor.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.61130.707"
+          }
+        }
+      },
+      "Microsoft.AspNet.WebPages/3.3.0": {
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "3.3.0",
+          "Microsoft.Web.Infrastructure": "2.0.0"
+        },
+        "runtime": {
+          "lib/net45/System.Web.Helpers.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.61130.707"
+          },
+          "lib/net45/System.Web.WebPages.Deployment.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.61130.707"
+          },
+          "lib/net45/System.Web.WebPages.Razor.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.61130.707"
+          },
+          "lib/net45/System.Web.WebPages.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.61130.707"
+          }
+        }
+      },
+      "Microsoft.Web.Infrastructure/2.0.0": {
+        "runtime": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.34876.0"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.3.27908"
+          }
+        }
+      },
+      "QrCode.Net/0.4.0": {
+        "runtime": {
+          "lib/net45/Gma.QrCodeNet.Encoding.dll": {
+            "assemblyVersion": "0.4.0.0",
+            "fileVersion": "0.4.1.2"
+          }
+        }
+      },
+      "QRCoder/1.4.1": {
+        "dependencies": {
+          "System.Drawing.Common": "9.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/QRCoder.dll": {
+            "assemblyVersion": "1.4.1.0",
+            "fileVersion": "1.4.1.0"
+          }
+        }
+      },
+      "System.Drawing.Common/9.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52901"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "LPGxWebApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AForge/2.2.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-clkumhM9DggqIzEXAHgVLeWO4arG5YfoPr7J4jfjJx35AoeEIJSSm49J25bwp/9mXQYLwi7y1Wunc8qgYJsGxg==",
+      "path": "aforge/2.2.5",
+      "hashPath": "aforge.2.2.5.nupkg.sha512"
+    },
+    "AForge.Video/2.2.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XqzcOXtBUagEPRqg/00oayxlCPmxP4284SdM62mVotsNoD03fs19BrzdMBfhUOOYPyd0B/IXH7tEWnSDmc2gxA==",
+      "path": "aforge.video/2.2.5",
+      "hashPath": "aforge.video.2.2.5.nupkg.sha512"
+    },
+    "AForge.Video.DirectShow/2.2.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pEch6felU/RGAbl0A7yjaQjsGxwiRFU9R+qBqR92wQo++XhzPLeQaZHnAPIBYaG7MfoqtjgCDkK4z3Tra4VQ3w==",
+      "path": "aforge.video.directshow/2.2.5",
+      "hashPath": "aforge.video.directshow.2.2.5.nupkg.sha512"
+    },
+    "Microsoft.AspNet.Mvc/5.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Q1LcXRqTPmbXJAdf45PsxI6JYnCQP4vBfPCgDFd4dYf8ojxFTo4PH333PC4TzbOqRHxrUWGwgBdcR5T2jNwpHQ==",
+      "path": "microsoft.aspnet.mvc/5.3.0",
+      "hashPath": "microsoft.aspnet.mvc.5.3.0.nupkg.sha512"
+    },
+    "Microsoft.AspNet.Razor/3.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5vJ0UKE/n381qcaKwFHxCwzb/YVuHzrm155iTgQhiv7+xdg2PE+54u+NPqu6C9AeRVOiwbh8/EOZwD16bLvWkg==",
+      "path": "microsoft.aspnet.razor/3.3.0",
+      "hashPath": "microsoft.aspnet.razor.3.3.0.nupkg.sha512"
+    },
+    "Microsoft.AspNet.WebPages/3.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2ATJrA8KNx2EpBWNjwy4P+NjQ06cZWjYsTZ5NqGNIHaU/i3NKmtpoaE90NGmVRaKF5rryGfADnvPQ56f61OuWg==",
+      "path": "microsoft.aspnet.webpages/3.3.0",
+      "hashPath": "microsoft.aspnet.webpages.3.3.0.nupkg.sha512"
+    },
+    "Microsoft.Web.Infrastructure/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NA6F00drSYd4HZk7QcyMRz1EEdZQQpcdnt6DfNiurNcUNsmmRDpz9db2Bc3L3Lgo455BOSwNDuNjbhDLltKGKQ==",
+      "path": "microsoft.web.infrastructure/2.0.0",
+      "hashPath": "microsoft.web.infrastructure.2.0.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "path": "newtonsoft.json/13.0.3",
+      "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
+    },
+    "QrCode.Net/0.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/IGAS08L3o0GYsVU1VQnE23w00EVaQ1GP5cS2uEfGsiszZ2X6AnbHImwXL1XPM0opT0GOVgbX4Bhp/7eB22Ugg==",
+      "path": "qrcode.net/0.4.0",
+      "hashPath": "qrcode.net.0.4.0.nupkg.sha512"
+    },
+    "QRCoder/1.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-W8KwCwsOJe9SI7Cm7XeIMawd08F/US6xNw34lg2Qnx6m7GYYakxbyBQaNoW1Q75oJOmX/32sJUZr6Cix2B6GUQ==",
+      "path": "qrcoder/1.4.1",
+      "hashPath": "qrcoder.1.4.1.nupkg.sha512"
+    },
+    "System.Drawing.Common/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uoozjI3+dlgKh2onFJcz8aNLh6TRCPlLSh8Dbuljc8CdvqXrxHOVysJlrHvlsOCqceqGBR1wrMPxlnzzhynktw==",
+      "path": "system.drawing.common/9.0.0",
+      "hashPath": "system.drawing.common.9.0.0.nupkg.sha512"
+    }
+  }
+}
