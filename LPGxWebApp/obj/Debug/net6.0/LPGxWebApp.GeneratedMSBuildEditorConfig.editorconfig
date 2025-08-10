@@ -9,135 +9,135 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LPGxWebApp
 build_property.RootNamespace = LPGxWebApp
-build_property.ProjectDir = D:\Shuvro\LPGx\LPGx\LPGxWebApp\
+build_property.ProjectDir = C:\Users\AE\Source\Repos\LPGxApp\LPGxWebApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Shuvro\LPGx\LPGx\LPGxWebApp
+build_property.MSBuildProjectDirectory = C:\Users\AE\Source\Repos\LPGxApp\LPGxWebApp
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Dashboard/Index.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Error.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Login/Index.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Login/VerifyOTP.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Login/VerifyOTP.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cVmVyaWZ5T1RQLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Login/VerifyPassword.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Login/VerifyPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cVmVyaWZ5UGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Maintenance.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Maintenance.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFpbnRlbmFuY2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Operation/Return.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Operation/Return.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3BlcmF0aW9uXFJldHVybi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Operation/Sale.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Operation/Sale.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3BlcmF0aW9uXFNhbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Privacy.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Report/DailyStockReport.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Report/DailyStockReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0XERhaWx5U3RvY2tSZXBvcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Report/ReturnReport.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Report/ReturnReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0XFJldHVyblJlcG9ydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Report/SalesReport.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Report/SalesReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0XFNhbGVzUmVwb3J0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Setup/Branches.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Setup/Branches.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2V0dXBcQnJhbmNoZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Setup/Distributors.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Setup/Distributors.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2V0dXBcRGlzdHJpYnV0b3JzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Setup/Products.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Setup/Products.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2V0dXBcUHJvZHVjdHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Setup/Projects.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Setup/Projects.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2V0dXBcUHJvamVjdHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Shared/_FooterPartial.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Shared/_FooterPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Gb290ZXJQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Shared/_MenuPartial.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Shared/_MenuPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9NZW51UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Shared/_MessageBoxPartial.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Shared/_MessageBoxPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9NZXNzYWdlQm94UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Shared/_NavBarPartial.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Shared/_NavBarPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9OYXZCYXJQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Shared/_NavBarPartialSwitch.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Shared/_NavBarPartialSwitch.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9OYXZCYXJQYXJ0aWFsU3dpdGNoLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Users/EditUser.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Users/EditUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcRWRpdFVzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Users/Salesman.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Users/Salesman.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcU2FsZXNtYW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Users/UserLevel.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Users/UserLevel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcVXNlckxldmVsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Users/UserList.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Users/UserList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcVXNlckxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Users/UserMapping.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Users/UserMapping.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcVXNlck1hcHBpbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/_ViewImports.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/_ViewStart.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Shared/_CustomLayout.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Shared/_CustomLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9DdXN0b21MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-avcan9f05v
 
-[D:/Shuvro/LPGx/LPGx/LPGxWebApp/Pages/Shared/_Layout.cshtml]
+[C:/Users/AE/Source/Repos/LPGxApp/LPGxWebApp/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-6690o94npb

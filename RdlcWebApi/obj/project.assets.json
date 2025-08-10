@@ -4230,11 +4230,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Shuvro\\LPGx\\LPGx\\RdlcWebApi\\RdlcWebApi.csproj",
+      "projectUniqueName": "C:\\Users\\AE\\Source\\Repos\\LPGxApp\\RdlcWebApi\\RdlcWebApi.csproj",
       "projectName": "RdlcWebApi",
-      "projectPath": "D:\\Shuvro\\LPGx\\LPGx\\RdlcWebApi\\RdlcWebApi.csproj",
+      "projectPath": "C:\\Users\\AE\\Source\\Repos\\LPGxApp\\RdlcWebApi\\RdlcWebApi.csproj",
       "packagesPath": "C:\\Users\\AE\\.nuget\\packages\\",
-      "outputPath": "D:\\Shuvro\\LPGx\\LPGx\\RdlcWebApi\\obj\\",
+      "outputPath": "C:\\Users\\AE\\Source\\Repos\\LPGxApp\\RdlcWebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\AE\\AppData\\Roaming\\NuGet\\NuGet.Config",

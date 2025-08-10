@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RdlcWebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee9388f495236d622f98ec7a74da8d25916358b3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dca6fffc5c86a831395e8a2c147ce6593268131b")]
 [assembly: System.Reflection.AssemblyProductAttribute("RdlcWebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RdlcWebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

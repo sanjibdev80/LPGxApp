@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LPGxWebApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d5a734696185e5f6bf6e15dcaa3fe3f0fdafa63")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dca6fffc5c86a831395e8a2c147ce6593268131b")]
 [assembly: System.Reflection.AssemblyProductAttribute("LPGxWebApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LPGxWebApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

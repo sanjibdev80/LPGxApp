@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "l+GbO/es0zM=",
+  "dgSpecHash": "ByA3H8+WC4E=",
   "success": true,
-  "projectFilePath": "D:\\Shuvro\\LPGx\\LPGx\\LPGxWebApp\\LPGxWebApp.csproj",
+  "projectFilePath": "C:\\Users\\AE\\Source\\Repos\\LPGxApp\\LPGxWebApp\\LPGxWebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AE\\.nuget\\packages\\aforge\\2.2.5\\aforge.2.2.5.nupkg.sha512",
     "C:\\Users\\AE\\.nuget\\packages\\aforge.video\\2.2.5\\aforge.video.2.2.5.nupkg.sha512",

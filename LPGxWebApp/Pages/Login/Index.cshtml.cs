@@ -54,7 +54,7 @@ namespace LPGxWebApp.Pages.Login
                 }
 
                 // Construct the full API URL
-                string apiUrl = $"{baseUrl}LoginInfos/LoginIn/{countryCode}{phoneNumber}";
+                string apiUrl = $"{baseUrl}LoginInfos/Login/signon/{countryCode}{phoneNumber}";
 
                 // Call the API using ApiService's CallApiAsync method
                 var response = await _apiService.CallApiAsync("GET", apiUrl, string.Empty);

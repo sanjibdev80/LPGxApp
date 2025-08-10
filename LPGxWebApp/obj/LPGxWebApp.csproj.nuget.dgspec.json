@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Shuvro\\LPGx\\LPGx\\LPGxWebApp\\LPGxWebApp.csproj": {}
+    "C:\\Users\\AE\\Source\\Repos\\LPGxApp\\LPGxWebApp\\LPGxWebApp.csproj": {}
   },
   "projects": {
-    "D:\\Shuvro\\LPGx\\LPGx\\LPGxWebApp\\LPGxWebApp.csproj": {
+    "C:\\Users\\AE\\Source\\Repos\\LPGxApp\\LPGxWebApp\\LPGxWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Shuvro\\LPGx\\LPGx\\LPGxWebApp\\LPGxWebApp.csproj",
+        "projectUniqueName": "C:\\Users\\AE\\Source\\Repos\\LPGxApp\\LPGxWebApp\\LPGxWebApp.csproj",
         "projectName": "LPGxWebApp",
-        "projectPath": "D:\\Shuvro\\LPGx\\LPGx\\LPGxWebApp\\LPGxWebApp.csproj",
+        "projectPath": "C:\\Users\\AE\\Source\\Repos\\LPGxApp\\LPGxWebApp\\LPGxWebApp.csproj",
         "packagesPath": "C:\\Users\\AE\\.nuget\\packages\\",
-        "outputPath": "D:\\Shuvro\\LPGx\\LPGx\\LPGxWebApp\\obj\\",
+        "outputPath": "C:\\Users\\AE\\Source\\Repos\\LPGxApp\\LPGxWebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\AE\\AppData\\Roaming\\NuGet\\NuGet.Config",
